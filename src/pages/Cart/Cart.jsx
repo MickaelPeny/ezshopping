@@ -8,8 +8,10 @@ import {
 
 const Cart = () => {
   const products = useSelector((state) => state.cart.items);
+  const user = useSelector((state) => state.login.user);
   const dispatch = useDispatch();
   console.log(products);
+  console.log(user.firstname);
 
   const handleRemove = (productId) => {
     dispatch(removeFromCart(productId));
@@ -28,8 +30,9 @@ const Cart = () => {
 
   return (
     <>
-      <h1>Page Cart</h1>
-      <button onClick={handleClearCart}>Vider le panier</button>
+      <h1>Hi {user.firstname} !</h1>
+      <p>There are {products.length} items in your basket</p>
+      <button onClick={handleClearCart}>Clear Basket</button>
       <div>
         {products.map((item) => (
           <div key={item.id} className="Product">

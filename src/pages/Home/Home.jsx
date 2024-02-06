@@ -24,13 +24,15 @@ const Home = () => {
 
   return (
     <>
-      <h1>Page Home</h1>
       <div className="Products-container">
         {products.map((product) => (
           <div key={product.id} className="Product">
             <img src={product.image} alt={product.title} />
             <div className="Product-details">
-              <h3 className="Product-title">{product.title}</h3>
+              <h3 className="Product-title">
+                {product.title}
+                <h5 className="Product-category">{product.category}</h5>
+              </h3>
               <p>{product.description}</p>
               <p className="Product-price">${product.price}</p>
               <div className="Quantity-selector">

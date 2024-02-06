@@ -1,0 +1,55 @@
+header {
+  margin: 0;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EAB023;
+    color: black;
+    padding: 0 30px 0 30px;
+    font-size: 20px;
+
+    .right-nav {
+      display: flex;
+
+      a {
+        padding: 0 15px 0 15px;
+      }
+
+      button {
+        background-color: #EAB023;
+        border: none;
+        color: black;
+        padding: 0;
+      }
+
+      .login,
+      .cart,
+      .darkmode {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .darkmode {
+        .light {
+          display: none;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 35px;
+    }
+
+    a {
+      color: black;
+    }
+
+    a:hover {
+      color: black;
+      text-decoration: none;
+    }
+  }
+}
