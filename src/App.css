@@ -1,0 +1,29 @@
+/* Dark-Mode */
+.dark-mode {
+  background-color: #444444;
+
+  nav,
+  .dark {
+    background-color: #242424;
+    color: #ACACAC;
+  }
+
+  nav {
+
+    a,
+    a:hover {
+      color: #ACACAC;
+    }
+  }
+
+  .Products-container,
+  .top-infos,
+  .top-infos .name,
+  form,
+  form div,
+  .btn,
+  .fill {
+    background-color: #444444;
+    color: #ACACAC;
+  }
+}

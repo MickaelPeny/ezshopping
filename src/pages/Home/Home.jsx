@@ -31,12 +31,12 @@ const Home = () => {
             <div className="Product-details">
               <h3 className="Product-title">
                 {product.title}
-                <h5 className="Product-category">{product.category}</h5>
+                <p className="Product-category">{product.category}</p>
               </h3>
               <p>{product.description}</p>
               <p className="Product-price">${product.price}</p>
               <div className="Quantity-selector">
-                <label htmlFor={`quantity-${product.id}`}>Quantity:</label>
+                <label htmlFor={`quantity-${product.id}`}>Quantity :</label>
                 <input
                   type="number"
                   id={`quantity-${product.id}`}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../features/loginSlice";
+import "./Login.css";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -42,40 +43,55 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!isValidEmail(localUser.email)) {
+      setEmailError("Adresse e-mail non valide.");
+      return;
+    }
     dispatch(setUser(localUser));
     localStorage.setItem("login", JSON.stringify(localUser));
+    setEmailError("");
   };
 
   return (
     <>
-      <h1>Hi {user.firstname} !</h1>
-      <p>Customize your profile here</p>
+      <div className="top-infos">
+        <h1>Hi {user.firstname} !</h1>
+        <p>Customize your profile here</p>
+      </div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="firstname">Your firstname: </label>
-        <input
-          name="firstname"
-          type="text"
-          id="firstname"
-          value={localUser.firstname}
-          onChange={handleChange}
-        />
-        <label htmlFor="lastname">Your lastname: </label>
-        <input
-          type="text"
-          name="lastname"
-          id="lastname"
-          value={localUser.lastname}
-          onChange={handleChange}
-        />
-        <label htmlFor="email"> Your email: </label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          value={localUser.email}
-          onChange={handleChange}
-        />
-        {emailError && <p>{emailError}</p>}
+        <div className="infos">
+          <div className="firstname">
+            <label htmlFor="firstname">Your firstname: </label>
+            <input
+              name="firstname"
+              type="text"
+              id="firstname"
+              value={localUser.firstname}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="lastname">
+            <label htmlFor="lastname">Your lastname: </label>
+            <input
+              type="text"
+              name="lastname"
+              id="lastname"
+              value={localUser.lastname}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="email">
+            <label htmlFor="email"> Your email: </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              value={localUser.email}
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+        <div className="email-error">{emailError && <p>{emailError}</p>}</div>
         <button type="submit">Save</button>
       </form>
     </>

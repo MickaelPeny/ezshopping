@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import productsReducer from "../features/productsSlice";
 import cartReducer from "../features/cartSlice";
 import loginReducer from "../features/loginSlice";
+import themeReducer from "../features/themeSlice";
 
 const savedCart = localStorage.getItem("cart");
 const initialCartState = savedCart ? JSON.parse(savedCart) : [];
@@ -21,6 +22,7 @@ export const store = configureStore({
     products: productsReducer,
     cart: cartReducer,
     login: loginReducer,
+    theme: themeReducer,
   },
   preloadedState: {
     cart: {

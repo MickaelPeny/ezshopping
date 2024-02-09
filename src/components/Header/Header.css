@@ -24,6 +24,10 @@ header {
         padding: 0;
       }
 
+      button:focus {
+        outline: none;
+      }
+
       .login,
       .cart,
       .darkmode {
@@ -43,10 +47,7 @@ header {
       font-size: 35px;
     }
 
-    a {
-      color: black;
-    }
-
+    a,
     a:hover {
       color: black;
       text-decoration: none;

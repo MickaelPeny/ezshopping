@@ -1,0 +1,44 @@
+form {
+  width: 100vw;
+  height: 67.5vh;
+  background-color: white;
+
+  .infos {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    gap: 5px;
+    margin-top: 15px;
+    padding: 0px 0px 15px 15px;
+
+    .firstname,
+    .lastname,
+    .email {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 5px 0px;
+
+      input {
+        height: 60%;
+        padding: 2px;
+        background-color: white;
+        color: black;
+        border: 0.1px solid;
+      }
+    }
+
+  }
+
+  .email-error {
+    color: black;
+    margin: 0px 0px 0px 15px;
+  }
+
+  button {
+    background-color: #EAB023;
+    color: black;
+    border-radius: 5px;
+    margin: 5px 0px 0px 15px;
+  }
+}
